@@ -1,0 +1,48 @@
+// Дан массив целых чисел. Переписать все положительные элементы во второй массив, а остальные - в третий.
+using System;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            int[] array = new int[n];
+            int[] array1 = new int[n];
+            int[] array2 = new int[n];
+
+            for (int i = 0; i < n; i++)  // Заполнение массива в столбик
+            {
+                array[i] = int.Parse(Console.ReadLine());
+            }
+            int i_array1 = 0;
+            int i_array2 = 0;
+            for (int i = 0; i < n; i++)
+            {
+                if (array[i] >= 0)
+                {
+                    array1[i_array1] = array[i];
+                    i_array1++;
+                }
+                else
+                {
+                    array2[i_array2] = array[i];
+                    i_array2++;
+                }
+            }
+            Console.WriteLine("Массив с положительными числами: ");
+            for (int i = 0; i < i_array1; i++)
+            {
+                Console.Write(array1[i] + " ");
+            }
+            Console.WriteLine("");
+            Console.WriteLine("Массив с остальными числами: ");
+            for (int i = 0; i < i_array2; i++)
+            {
+                Console.Write(array2[i] + " ");
+            }
+        }
+    }
+}
