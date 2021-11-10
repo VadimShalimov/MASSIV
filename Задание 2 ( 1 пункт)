@@ -1,0 +1,31 @@
+//Дан одномерный массив, состоящий из N целочисленных элементов. Ввести массив с клавиатуры. Найти минимальный элемент. Вывести индекс минимального элемента на экран.
+using System;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = Convert.ToInt32(Console.ReadLine());
+            var array = Array.ConvertAll(Console.ReadLine().Split(' '), s => int.Parse(s));
+            int min = array[0];
+            for (int i = 1; i < array.Length; i++)
+            {
+                if (min > array[i])
+                {
+                    min = array[i];
+                }
+            }
+            Console.WriteLine("Минимальный элемент массива: " + min);
+            for (int i = 0; i < n; i++)
+            {
+                if (array[i] == min)
+                {
+                    Console.WriteLine("Индекс минимального числа: " + i);
+                    break; ;
+                }
+            }
+        }
+    }
+}
